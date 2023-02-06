@@ -7,20 +7,30 @@
 {% include alerts/specific/important_bootloader_not_unlockable.html %}
 {% endif %}
 
+{%- if device.variant %}
+## Variants
+
+There are multiple variants of this device. [Make sure you're viewing the right one.]({{ "devices/" | append: device.codename | relative_url }})
+{%- endif %}
+
 ## Get XPerience for the {{ device.vendor }} {{ device.name }}
 [Get the builds here](https://sourceforge.net/projects/xperience-aosp/files/{{ device.codename }})
 
 ## Guides
 
 {%- assign path_prefix = "devices/" | append: device.codename %}
-
-- [Installation]({{ path_prefix | append: "/install" | relative_url }})
-- [Build for yourself]({{ path_prefix | append: "/build" | relative_url }})
-{%- if device.firmware_update %}
-- [Update to a newer vendor firmware version]({{ path_prefix | append: "/fw_update" | relative_url }})
+{%- assign path_postfix = "" %}
+{%- if device.variant %}
+{%- assign path_postfix = "/" | append: "variant" | append: device.variant %}
 {%- endif %}
-- [Update to a newer build of the same XPerience version]({{ path_prefix | append: "/update" | relative_url }})
-- [Upgrade to a higher Android version (e.g. Android 12 -> Android 13)]({{ path_prefix | append: "/upgrade" | relative_url }})
+
+- [Installation]({{ path_prefix | append: "/install" | append: path_postfix | relative_url }})
+- [Build for yourself]({{ path_prefix | append: "/build" | append: path_postfix | relative_url }})
+{%- if device.firmware_update %}
+- [Update to a newer vendor firmware version]({{ path_prefix | append: "/fw_update" | append: path_postfix | relative_url }})
+{%- endif %}
+- [Update to a newer build of the same XPerience version]({{ path_prefix | append: "/update" | append: path_postfix | relative_url }})
+- [Upgrade to a higher Android version (e.g. Android 12 -> Android 13)]({{ path_prefix | append: "/upgrade" | append: path_postfix | relative_url }})
 
 {% if device.note_title and device.note_title != "" %}
 {% include templates/device_info_note.md %}
