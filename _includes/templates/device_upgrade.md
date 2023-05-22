@@ -25,25 +25,25 @@ The updater app does not support upgrades from one version of XPerience to anoth
 1. Download the [XPerience install package](https://sourceforge.net/projects/xperience-aosp/files/{{ device.codename }}) that you'd like to install or [build]({{ path_prefix | append: "/build" | relative_url }}) the package yourself.
 2. Make sure your computer has working `adb`. Setup instructions can be found [here]({{ "help/adb-fastboot-guide/" | relative_url }}).
 3. Enable [USB debugging]({{ "help/adb-fastboot-guide/#setting-up-adb" | relative_url }}) on your device.
-4. Reboot into recovery by running `adb reboot recovery`, or by performing the following:
+4. Reboot into recovery by running `adb -d reboot recovery`, or by performing the following:
     * {{ device.recovery_boot }}
 {%- if device.uses_custom_recovery %}
 5. Now tap **Wipe**.
 6. Now tap **Format Data** and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage.
 7. Sideload the XPerience `.zip` package:
     * On the device, select "Advanced", "ADB Sideload", then swipe to begin sideload.
-    * On the host machine, sideload the package using: `adb sideload xperience-19.0.0-{{ site.time | date: "%Y%m%d" }}-{{ site.time | date: "%H%M%S" }}-UNOFFICIAL-{{ device.codename }}.zip`.
+    * On the host machine, sideload the package using: `adb -d sideload xperience-19.0.0-{{ site.time | date: "%Y%m%d" }}-{{ site.time | date: "%H%M%S" }}-UNOFFICIAL-{{ device.codename }}.zip`.
         {% include alerts/specific/tip_adb_flash_success.html %}
 {% else %}
 5. Now tap **Factory Reset**, then **Format data / factory reset** and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage, as well as format your cache partition (if you have one).
 6. Return to the main menu.
 7. Sideload the XPerience `.zip` package:
     * On the device, select "Apply Update", then "Apply from ADB" to begin sideload.
-    * On the host machine, sideload the package using: `adb sideload xperience-19.0.0-{{ site.time | date: "%Y%m%d" }}-{{ site.time | date: "%H%M%S" }}-UNOFFICIAL-{{ device.codename }}.zip`.
+    * On the host machine, sideload the package using: `adb -d sideload xperience-19.0.0-{{ site.time | date: "%Y%m%d" }}-{{ site.time | date: "%H%M%S" }}-UNOFFICIAL-{{ device.codename }}.zip`.
         {% include alerts/specific/tip_adb_flash_success.html %}
 {% endif %}
 {% if device.uses_custom_recovery %}
-8. Once you have installed everything successfully, run 'adb reboot'.
+8. Once you have installed everything successfully, run 'adb -d reboot'.
 {% else %}
 8. Once you have installed everything successfully, click the back arrow in the top left of the screen, then "Reboot system now".
 {% endif %}

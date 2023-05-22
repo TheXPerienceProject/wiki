@@ -90,11 +90,11 @@ fastboot reboot
 ```
 7. Push the custom recovery image to your device:
 ```
-adb push path-to-recovery-file.img /sdcard
+adb -d push path-to-recovery-file.img /sdcard
 ```
 8. Enter shell on the device:
 ```
-adb shell
+adb -d shell
 ```
 9. Flash custom recovery to `recovery` permanently:
 ```

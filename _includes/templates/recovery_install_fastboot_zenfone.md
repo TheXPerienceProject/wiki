@@ -16,9 +16,9 @@
 3. On the computer, open a command prompt (on Windows) or terminal (on Linux or macOS) window and change to the location where the Unlock Device App `.apk` resides.
 4. Install the `.apk` by typing:
 ```
-adb install Name_of_unlock_app.apk
+adb -d install Name_of_unlock_app.apk
 ```
-    * For example, on the ZE551ML device, it would be `adb install UnlockApp_ze551ml_20150723.apk`.
+    * For example, on the ZE551ML device, it would be `adb -d install UnlockApp_ze551ml_20150723.apk`.
 
 5. Run the application **Unlock Device Tool** from the device and agree to the terms.
 
