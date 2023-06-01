@@ -1,6 +1,6 @@
 ---
 sidebar: home_sidebar
-title: Upgrade PixelExperience on lavender
+title: Upgrade XPerience on lavender
 folder: upgrade
 permalink: /devices/lavender/upgrade/
 device: lavender

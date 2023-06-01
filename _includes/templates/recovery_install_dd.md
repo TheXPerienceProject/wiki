@@ -31,7 +31,7 @@
 {% if device.uses_custom_recovery %}
 1. Download the [custom recovery]({{ custom_recovery_link }}).
 {% else %}
-1. Download the [PixelExperience Recovery](https://download.pixelexperience.org/{{ device.codename }}). Simply download the latest recovery file.
+1. Download the [XPerience Recovery](sourceforge.net/projects/xperience-aosp/files/recovery/{{ device.codename }}). Simply download the latest recovery file.
 {% endif %}
 2. Place the recovery image file on the root of `/sdcard`:
    * Using adb: `adb push <recovery_filename>.img /sdcard/<recovery_filename>.img`

@@ -1,6 +1,6 @@
 ---
 sidebar: home_sidebar
-title: Upgrade PixelExperience on davinci
+title: Upgrade XPerience on davinci
 folder: upgrade
 permalink: /devices/davinci/upgrade/
 device: davinci

@@ -10,19 +10,19 @@
 {% endunless %}
 {%- endif %}
 
-## Manually upgrading PixelExperience
+## Manually upgrading XPerience
 
 {% include alerts/warning.html content="You must do a factory reset before upgrading, so consider backing up your internal storage." %}
 
 {%- unless device.is_ab_device %}
-{%- capture recovery_update %}In some cases, a newer PixelExperience version may not install due to an outdated recovery.
+{%- capture recovery_update %}In some cases, a newer XPerience version may not install due to an outdated recovery.
 Follow your [device's installation guide]({{ path_prefix | append: "/install" | relative_url }}) to see how you can update your recovery image.{% endcapture %}
 {% include alerts/tip.html content=recovery_update %}
 {%- endunless %}
 
-The updater app does not support upgrades from one version of PixelExperience to another, and will block installation to any update for a different version. Upgrading manually requires similar steps to installing PixelExperience for the first time.
+The updater app does not support upgrades from one version of XPerience to another, and will block installation to any update for a different version. Upgrading manually requires similar steps to installing XPerience for the first time.
 
-1. Download the [PixelExperience install package](https://download.pixelexperience.org/{{ device.codename }}) that you'd like to install or [build]({{ path_prefix | append: "/build" | relative_url }}) the package yourself.
+1. Download the [XPerience install package](https://sourceforge.net/projects/xperience-aosp/files/{{ device.codename }}) that you'd like to install or [build]({{ path_prefix | append: "/build" | relative_url }}) the package yourself.
 2. Make sure your computer has working `adb`. Setup instructions can be found [here]({{ "help/adb-fastboot-guide/" | relative_url }}).
 3. Enable [USB debugging]({{ "help/adb-fastboot-guide/#setting-up-adb" | relative_url }}) on your device.
 4. Reboot into recovery by running `adb reboot recovery`, or by performing the following:
@@ -30,14 +30,14 @@ The updater app does not support upgrades from one version of PixelExperience to
 {%- if device.uses_custom_recovery %}
 5. Now tap **Wipe**.
 6. Now tap **Format Data** and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage.
-7. Sideload the PixelExperience `.zip` package:
+7. Sideload the XPerience `.zip` package:
     * On the device, select "Advanced", "ADB Sideload", then swipe to begin sideload.
     * On the host machine, sideload the package using: `adb sideload filename.zip`.
         {% include alerts/specific/tip_adb_flash_success.html %}
 {% else %}
 5. Now tap **Factory Reset**, then **Format data / factory reset** and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage, as well as format your cache partition (if you have one).
 6. Return to the main menu.
-7. Sideload the PixelExperience `.zip` package:
+7. Sideload the XPerience `.zip` package:
     * On the device, select "Apply Update", then "Apply from ADB" to begin sideload.
     * On the host machine, sideload the package using: `adb sideload filename.zip`.
         {% include alerts/specific/tip_adb_flash_success.html %}
@@ -55,4 +55,4 @@ The updater app does not support upgrades from one version of PixelExperience to
 
 ## Get assistance
 
-If you have any questions or get stuck on any of the steps, feel free to ask on [our Telegram group](https://t.me/pixelexperiencechat).
+If you have any questions or get stuck on any of the steps, feel free to ask on [our Telegram group](https://t.me/XPeriencechat).

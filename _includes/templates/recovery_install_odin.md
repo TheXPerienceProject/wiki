@@ -30,10 +30,10 @@ The preferred method of installing a custom recovery is through Download Mode{% 
  * From within the Developer options menu, enable OEM unlock.
 {% endunless %}
 {% if device.uses_recovery_tar %}
-2. Download the [PixelExperience Recovery](https://download.pixelexperience.org/{{ device.codename }}). Simply download the latest recovery file.
+2. Download the [XPerience Recovery](https://sourceforge.net/projects/xperience-aosp/files/{{ device.codename }}). Simply download the latest recovery file.
 {% else %}
 {%- assign is_pe_recovery = true %}
-2. Download the [PixelExperience Recovery](https://download.pixelexperience.org/{{ device.codename }}). Simply download the latest recovery file.
+2. Download the [XPerience Recovery](https://sourceforge.net/projects/xperience-aosp/files/{{ device.codename }}). Simply download the latest recovery file.
 3. Rename the downloaded image to "recovery.img", open a Command Prompt in the folder where the file was downloaded, and TAR the file by running `tar -cvf recovery.tar recovery.img`.
     {% include alerts/tip.html content="Make sure to not accidentally name the file `recovery.img.img` when file name extensions are hidden." %}
     {% include alerts/tip.html content="You can open a command prompt in any folder by right-clicking on empty space while holding Shift and selecting \"Open Command Prompt here\" or \"Open PowerShell window here\" from the context menu." %}

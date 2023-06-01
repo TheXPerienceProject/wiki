@@ -12,8 +12,8 @@ Do **not** continue after something fails!" %}
 4. Make sure that your model is actually listed in the "Supported models" section [here]({{ "devices/" | append: device.codename | append: "#supported-models" | relative_url }}) (exact match required!)
 {%- endif %}
 5. Boot your device with the stock OS at least once and check every functionality.
-  Make sure that you can send and receive SMS and place and receive calls (also via WiFi and LTE, if available), otherwise it won't work on PixelExperience either! Additionally, some devices require that VoLTE/VoWiFi be utilized once on stock to provision IMS.
-6. PixelExperience is provided as-is with no warranty. While we attempt to verify [everything works](https://github.com/PixelExperience/docs/blob/master/device_requirements.md) you are installing this at your own risk!
+  Make sure that you can send and receive SMS and place and receive calls (also via WiFi and LTE, if available), otherwise it won't work on XPerience either! Additionally, some devices require that VoLTE/VoWiFi be utilized once on stock to provision IMS.
+6. XPerience is provided as-is with no warranty. While we attempt to verify [everything works](https://github.com/TheXPerienceProject/docs/blob/master/device_requirements.md) you are installing this at your own risk!
 
 {%- if device.before_install %}
 {% capture path %}templates/device_specific/before_install_{{ device.before_install }}.md{% endcapture %}
@@ -64,9 +64,9 @@ There are no recovery installation instructions for this discontinued device.
 {% include {{ path }} %}
 {% endif %}
 
-## Installing PixelExperience from recovery
+## Installing XPerience from recovery
 
-1. Download the [PixelExperience installation package](https://download.pixelexperience.org/{{ device.codename }}) that you would like to install or [build]({{ "devices/" | append: device.codename | append: "/build" | relative_url }}) the package yourself.
+1. Download the [XPerience installation package](https://sourceforge.net/projects/xperience-aosp/files/{{ device.codename }}) that you would like to install or [build]({{ "devices/" | append: device.codename | append: "/build" | relative_url }}) the package yourself.
 {%- if device.is_retrofit_dynamic_partitions and device.is_ab_device != true %}
     * You will also need to flash an empty super image since your device uses retrofitted dynamic partitions: download super_empty.img from the directory named with the latest date [here](https://mirror.math.princeton.edu/pub/lineageos/full/{{ device.codename }}/)
 {%- endif %}
@@ -78,7 +78,7 @@ There are no recovery installation instructions for this discontinued device.
 {% if device.uses_custom_recovery %}
 3. Now tap **Wipe**.
 4. Now tap **Format Data** and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage.
-5. Sideload the PixelExperience `.zip` package:
+5. Sideload the XPerience `.zip` package:
     * On the device, select "Advanced", "ADB Sideload", then swipe to begin sideload.
     * On the host machine, sideload the package using: `adb sideload filename.zip`.
         {% include alerts/specific/tip_adb_flash_success.html %}
@@ -95,7 +95,7 @@ There are no recovery installation instructions for this discontinued device.
         {% include alerts/specific/note_retrofit_sideload_failed.html %}
 {%- endif %}
 {%- endif %}
-5. Sideload the PixelExperience `.zip` package:
+5. Sideload the XPerience `.zip` package:
     * On the device, select "Apply Update", then "Apply from ADB" to begin sideload.
     * On the host machine, sideload the package using: `adb sideload filename.zip`.
         {% include alerts/specific/tip_adb_flash_success.html %}
@@ -124,6 +124,6 @@ If it takes longer, you may have missed a step, otherwise feel free to [get assi
 
 ## Get assistance
 
-After you've double checked that you followed the steps precisely, didn't skip any and still have questions or got stuck, feel free to ask on [our Telegram group](https://t.me/pixelexperiencechat).
+After you've double checked that you followed the steps precisely, didn't skip any and still have questions or got stuck, feel free to ask on [our Telegram group](https://t.me/XPeriencechat).
 
 </div>

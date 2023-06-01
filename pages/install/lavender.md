@@ -1,6 +1,6 @@
 ---
 sidebar: home_sidebar
-title: Install PixelExperience on lavender
+title: Install XPerience on lavender
 folder: install
 permalink: /devices/lavender/install/
 device: lavender

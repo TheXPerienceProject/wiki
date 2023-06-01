@@ -1,6 +1,6 @@
 ---
 sidebar: home_sidebar
-title: Install PixelExperience on davinci
+title: Install XPerience on davinci
 folder: install
 permalink: /devices/davinci/install/
 device: davinci

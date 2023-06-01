@@ -1,6 +1,6 @@
 {% assign device = site.data.devices[page.device] %}
 
-## Using the PixelExperience Updater app
+## Using the XPerience Updater app
 
 1. Open Settings, navigate to "System", tap on "Advanced" and tap on "System update".
 2. Click the Refresh Icon in the top right corner.

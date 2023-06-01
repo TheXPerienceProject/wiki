@@ -1,6 +1,6 @@
 ---
 sidebar: home_sidebar
-title: Install PixelExperience on dubai
+title: Install XPerience on dubai
 folder: install
 permalink: /devices/dubai/install
 device: dubai

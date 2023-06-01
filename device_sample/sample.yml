@@ -76,6 +76,5 @@ soc: Qualcomm MSM8974AC Snapdragon 801
 storage: 16/32 GB
 vendor: LG
 versions:
-- ten
-- ten_plus
+- xpe-17.0
 wifi: 802.11 a/b/g/n/ac

@@ -10,9 +10,9 @@ tags:
 
 ## Official devices
 
-If you have a working device tree/kernel, and would like to submit it for official builds, please check [this url](https://github.com/PixelExperience/official_devices/blob/master/README.md) for more instructions. Please note - your device **must** have full hardware support (i.e., every peripheral works) and **must** be stable.
+If you have a working device tree/kernel, and would like to submit it for official builds, please check [this url](https://github.com/TheXPerienceProject/official_devices/blob/master/README.md) for more instructions. Please note - your device **must** have full hardware support (i.e., every peripheral works) and **must** be stable.
 
-The PixelExperience wiki provides instructions based on the assumption that your device has got its device tree and required depedencies under the [PixelExperience-Devices GitHub organization](https://github.com/PixelExperience-Devices).
+The XPerience wiki provides instructions based on the assumption that your device has got its device tree and required depedencies under the [TheXPerienceProject GitHub organization](https://github.com/TheXPerienceProject).
 
 ## Setting up the wiki locally
 
@@ -148,15 +148,15 @@ There are some optional properties which you might not need, but in case you do,
 {% include alerts/important.html content="Remove any of these properties in case they don't apply for your device!" %}
 
 
-* `before_install`: Sometimes some pre-conditions must be met in order to be able to install PixelExperience. This often goes with `before_install_args`. See *_includes/templates/device_specific/before_install_*`before_install`*.md* for possible values.
-* `before_install_custom`: This property can be set to be able to display instructions between recovery and the actual PixelExperience installation. Existing (or to be created) values can be found in *_includes/templates/device_specific/before_install_custom*`before_install_custom`*.md*
+* `before_install`: Sometimes some pre-conditions must be met in order to be able to install XPerience. This often goes with `before_install_args`. See *_includes/templates/device_specific/before_install_*`before_install`*.md* for possible values.
+* `before_install_custom`: This property can be set to be able to display instructions between recovery and the actual XPerience installation. Existing (or to be created) values can be found in *_includes/templates/device_specific/before_install_custom*`before_install_custom`*.md*
 * `before_recovery_install`: Set this property to specify if something has to be done before installing the recovery. Values can be found in *_includes/templates/device_specific/before_recovery_install_*`before_recovery_install_`*.md*
 * `carrier`: If the device was released for a specific carrier, the name of that carrier.
 * `custom_recovery_link`: A custom recovery link in case no official recovery exists for the specific device or it doesn't work properly.
 * `custom_unlock_cmd`: Used if the command to unlock your device via fastboot is different than `fastboot oem unlock`.
 * `is_ab_device`: Used if the device has an A/B partition scheme.
 * `is_unlockable`: Set to false if there is no official method to unlock the bootloader. A hint will appear on the device's overview and install page. If this property is not set, it defaults to `True`
-* `required_bootloader`: Specify the bootloader versions which are required to install PixelExperience. Example:
+* `required_bootloader`: Specify the bootloader versions which are required to install XPerience. Example:
 
   ```
   required_bootloader: [Version1, Version2]
@@ -188,4 +188,4 @@ If the script doesn't give you an output, all the validated fields have a proper
 
 ## Submitting wiki changes
 
-After verifying the device-specific pages, commit it and open a pull request at [wiki source code](https://github.com/PixelExperience/wiki/) to review proposed changes.
+After verifying the device-specific pages, commit it and open a pull request at [wiki source code](https://github.com/TheXPerienceProject/wiki/) to review proposed changes.

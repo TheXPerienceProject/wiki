@@ -11,7 +11,7 @@
 
 {% if device.uses_custom_recovery %}
 ## Temporarily booting a custom recovery using `fastboot`
-{% include alerts/note.html content="This is temporary because the recovery is part of the OS and will be replaced once you install PixelExperience. It is not optional, though!" %}
+{% include alerts/note.html content="This is temporary because the recovery is part of the OS and will be replaced once you install XPerience. It is not optional, though!" %}
 {% else %}
 {%- assign is_pe_recovery = true %}
 ## Booting a custom recovery using `fastboot`
@@ -23,7 +23,7 @@
 1. Download the [custom recovery]({{ custom_recovery_link }}).
 {% else %}
 {%- assign is_pe_recovery = true %}
-1. Download the [PixelExperience Recovery](https://download.pixelexperience.org/{{ device.codename }}). Simply download the latest recovery file.
+1. Download the [XPerience Recovery](https://sourceforge.net/projects/xperience-aosp/files/{{ device.codename }}). Simply download the latest recovery file.
 {% endif %}
     {% include alerts/important.html content="Other recoveries may not work for installation or updates. We strongly recommend to use the one linked above!" %}
 2. Connect your device to your PC via USB if it isn't already.

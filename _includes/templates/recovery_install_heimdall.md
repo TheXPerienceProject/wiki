@@ -58,7 +58,7 @@ heimdall print-pit
 {% include alerts/tip.html content="Ensure you download the `.img` file and not the `.tar` or `.tar.md5` versions." %}
 {% else %}
 {%- assign is_pe_recovery = true %}
-1. Download the [PixelExperience Recovery](https://download.pixelexperience.org/{{ device.codename }}). Simply download the latest recovery file.
+1. Download the [XPerience Recovery](https://sourceforge.net/projects/xperience-aosp/files/{{ device.codename }}). Simply download the latest recovery file.
 {% endif %}
     {% include alerts/important.html content="Other recoveries may not work for installation or updates. We strongly recommend to use the one linked above!" %}
 2. Power off the device, and boot it into download mode:

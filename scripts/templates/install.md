@@ -1,6 +1,6 @@
 ---
 sidebar: home_sidebar
-title: Install PixelExperience on {codename}
+title: Install XPerience on {codename}
 folder: install
 permalink: /devices/{codename}/install/
 device: {codename}

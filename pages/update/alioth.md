@@ -1,6 +1,6 @@
 ---
 sidebar: home_sidebar
-title: Update PixelExperience on alioth
+title: Update XPerience on alioth
 folder: update
 permalink: /devices/alioth/update/
 device: alioth

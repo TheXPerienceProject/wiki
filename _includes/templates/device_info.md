@@ -7,8 +7,8 @@
 {% include alerts/specific/important_bootloader_not_unlockable.html %}
 {% endif %}
 
-## Get PixelExperience for the {{ device.vendor }} {{ device.name }}
-[Get the builds here](https://download.pixelexperience.org/{{ device.codename }})
+## Get XPerience for the {{ device.vendor }} {{ device.name }}
+[Get the builds here](https://sourceforge.net/projects/xperience-aosp/files/{{ device.codename }})
 
 ## Guides
 
@@ -19,7 +19,7 @@
 {%- if device.firmware_update %}
 - [Update to a newer vendor firmware version]({{ path_prefix | append: "/fw_update" | relative_url }})
 {%- endif %}
-- [Update to a newer build of the same PixelExperience version]({{ path_prefix | append: "/update" | relative_url }})
+- [Update to a newer build of the same XPerience version]({{ path_prefix | append: "/update" | relative_url }})
 - [Upgrade to a higher Android version (e.g. Android 12 -> Android 13)]({{ path_prefix | append: "/upgrade" | relative_url }})
 
 {% if device.note_title and device.note_title != "" %}
@@ -42,4 +42,4 @@
 
 ## Find help online
 
-You can find assistance with PixelExperience on [our Telegram group](https://t.me/pixelexperiencechat).
+You can find assistance with XPerience on [our Telegram group](https://t.me/XPeriencechat).

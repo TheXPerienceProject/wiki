@@ -11,7 +11,7 @@
 {% if device.uses_custom_recovery %}
 1. Download the [custom recovery]({{ custom_recovery_link }}).
 {% else %}
-1. Download the [PixelExperience Recovery](https://download.pixelexperience.org/{{ device.codename }}). Simply download the latest recovery file.
+1. Download the [XPerience Recovery](https://sourceforge.net/projects/xperience-aosp/files/{{ device.codename }}). Simply download the latest recovery file.
 {% endif %}
 2. Connect your device to your PC via USB.
 3. On the computer, open a command prompt (on Windows) or terminal (on Linux or macOS) window, and type:

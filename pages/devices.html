@@ -107,7 +107,7 @@ Select a vendor to jump to:<br/>
 {%- assign class="" %}
 {%- endif -%}
 
-{%- capture imagePath %}https://raw.githubusercontent.com/PixelExperience/official_devices/master/images/.thumbs/300/{{ device.codename }}.png{% endcapture %}
+{%- capture imagePath %}{{ "https://raw.githubusercontent.com/TheXPerienceProject/wiki/" | append: jekyll.environment | append: "/images/devices/small/" | append: device.image }}{% endcapture %}
 
 <div class="item {{ class }}" onClick="location.href='{{ url }}'">
   <div class="deviceimage">

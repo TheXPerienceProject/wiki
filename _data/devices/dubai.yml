@@ -29,12 +29,12 @@ dimensions:
   height: 159.4 mm (6.28 in)
   width: 74.2 mm (2.92 in)
 download_boot: With the device powered off, hold <kbd>Volume Down</kbd> + <kbd>Power</kbd>.
-dtbo_download_link: https://gitlab.pixelexperience.org/android/vendor-blobs/wiki_blobs_dubai/-/raw/thirteen/android-13/dtbo.img
+dtbo_download_link: 
 gpu: Adreno 642L
 install_method: fastboot_motorola
 is_ab_device: true
 maintainers:
-- Mukul Dhir
+- klozz
 name: Moto Edge 30
 network:
 - 2G GSM
@@ -69,8 +69,7 @@ screen:
 soc: Qualcomm SM7325-AE Snapdragon 778G+
 storage: 128/256 GB
 vendor: Motorola
-vendor_boot_download_link: https://gitlab.pixelexperience.org/android/vendor-blobs/wiki_blobs_dubai/-/raw/thirteen/android-13/vendor_boot.img
+vendor_boot_download_link: 
 versions:
-- thirteen
-- thirteen_plus
+- xpe-17.0
 wifi: 802.11 a/b/g/n/ac/6e, Dual band, Wi-Fi Direct, Hotspot

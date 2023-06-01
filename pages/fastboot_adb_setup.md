@@ -91,4 +91,4 @@ and `adb logcat -C` to view logs in colour
 
 ## Need help?
 
-You can find assistance with PixelExperience on [our Telegram group](https://t.me/pixelexperiencechat).
+You can find assistance with XPerience on [our Telegram group](https://t.me/xperiencechat).

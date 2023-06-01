@@ -1,6 +1,6 @@
 ---
 sidebar: home_sidebar
-title: Upgrade PixelExperience on dubai
+title: Upgrade XPerience on dubai
 folder: upgrade
 permalink: /devices/dubai/upgrade
 device: dubai
