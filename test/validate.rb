@@ -32,6 +32,12 @@ def load_template(template_file)
 end
 
 def validate_template(template, path, codename)
+  temp_codename = codename.sub(/_variant[0-9]+/, '')
+  template_content = template.gsub('{codename}', temp_codename)
+    # We need to handle variant[0-9] in title and codename
+    file_content.sub!(/_variant[0-9]+/, '')
+    # ... and in the permalink
+    file_content.sub!(/\/variant[0-9]+/, '')
   if not File.file?(path)
     puts 'Missing file for ' + codename + ' at ' + path
     at_exit { exit false }
