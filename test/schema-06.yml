@@ -831,7 +831,7 @@ properties:
     items:
       "$id": "/properties/versions/items"
       "$ref": "#/definitions/valid_branches"
-    minItems: 0
+    minItems: 1
     type: array
   deprecated_versions:
     "$id": "/properties/deprecated_versions"
