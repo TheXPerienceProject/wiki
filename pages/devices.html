@@ -110,7 +110,7 @@ Select a vendor to jump to:<br/>
 {%- assign class="" %}
 {%- endif -%}
 
-{%- capture imagePath %}{{ "https://raw.githubusercontent.com/TheXPerienceProject/wiki/" | append: jekyll.environment | append: "/images/devices/small/" | append: device.image }}{% endcapture %}
+{%- capture imagePath %}{{ "https://raw.githubusercontent.com/TheXPerienceProject/wiki/master" | append: "/images/devices/small/" | append: device.codename }}.png{% endcapture %}
 
 <div class="item {{ class }}" onClick="location.href='{{ url }}'" data-codename="{{ device.codename }}" data-variant="{{ device.variant }}" data-url="{{ url }}">
   <div class="deviceimage">
@@ -174,7 +174,7 @@ Select a vendor to jump to:<br/>
       </div>
       <div class="popup-body">
         <p>
-          These devices all use the same LineageOS build.
+          These devices all use the same XPerience build.
           The vendor may have released the same device under multiple names, or the maintainer may support multiple devices using the same code.
         </p>
         <p style="margin-bottom: 0px;">
