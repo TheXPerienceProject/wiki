@@ -1,5 +1,11 @@
 {%- capture android_version -%}
 {%- case version -%}
+    {% when 13.0 %}
+        Android 9
+    {% when 14.0 %}
+        Android 10
+    {% when 15.0 %}
+        Android 11
     {% when 16.1 %}
         Android 12
     {% when 17.0 %}
