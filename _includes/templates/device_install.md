@@ -16,7 +16,7 @@ Do **not** continue after something fails!" %}
 6. XPerience is provided as-is with no warranty. While we attempt to verify [everything works](https://github.com/TheXPerienceProject/docs/blob/master/device_requirements.md) you are installing this at your own risk!
 
 {%- if device.before_install %}
-{% capture path %}templates/device_specific/before_install_{{ device.before_install }}.md{% endcapture %}
+{% capture path %}templates/device_specific/before_install_{{ device.before_install.instructions }}.md{% endcapture %}
 {% include {{ path }} %}
 {%- endif %}
 

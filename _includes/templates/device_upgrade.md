@@ -3,9 +3,9 @@
 
 {% include alerts/important.html content="Please read through the instructions at least once completely before actually following them to avoid any problems because you missed something!" %}
 
-{%- if device.before_install and device.before_install == "needs_specific_android_fw" %}
-{% unless device.before_install_args and device.before_install_args.ships_fw %}
-{% capture path %}templates/device_specific/before_install_{{ device.before_install }}.md{% endcapture %}
+{%- if device.before_install.instructions == "needs_specific_android_fw" %}
+{% unless device.before_install.ships_fw %}
+{% capture path %}templates/device_specific/before_install_{{ device.before_install.instructions }}.md{% endcapture %}
 {% include {{ path }} %}
 {% endunless %}
 {%- endif %}

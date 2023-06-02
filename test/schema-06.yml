@@ -29,6 +29,29 @@ definitions:
     - capacity
     - removable
     type: object
+  before_install_format:
+    description: The format for the before_install property
+    properties:
+      instructions:
+        type: string
+      version:
+        type: string
+      ships_fw:
+        description: Defines whether the device ships firmware
+        type: boolean
+    required:
+    - instructions
+    type: object
+  before_recovery_install_format:
+    description: The format for the before_recovery_install property
+    properties:
+      instructions:
+        type: string
+      partitions:
+        type: array
+    required:
+    - instructions
+    type: object
   camera_data:
     description: The format for the camera property
     properties:
@@ -66,6 +89,73 @@ definitions:
   dimension_string:
     pattern: ^\d+(\.\d+)? mm \(\d+(\.\d+)? in\)$
     type: string
+  gpu_data:
+    enum:
+    - ARM Mali-400 MP4
+    - ARM Mali-G31 MP2
+    - ARM Mali-G52 MC2
+    - ARM Mali-G71 MP2
+    - ARM Mali-G72 MP12
+    - ARM Mali-G72 MP18
+    - ARM Mali-G72 MP3
+    - ARM Mali-G76 MP12
+    - ARM Mali-G78 MP20
+    - ARM Mali-G710 MC10
+    - ARM Mali-T604 MP4
+    - ARM Mali-T628 MP6
+    - ARM Mali-T720 MP2
+    - ARM Mali-T760 MP6
+    - ARM Mali-T760 MP8
+    - ARM Mali-T830 MP2
+    - ARM Mali-T830 MP3
+    - ARM Mali-T880 MP12
+    - NVIDIA GK20A (Kepler)
+    - NVIDIA GM20B (Maxwell)
+    - NVIDIA GP10B (Pascal)
+    - NVIDIA Kepler DX1 192-core
+    - NVIDIA Maxwell 256-core
+    - NVIDIA Tegra 4
+    - PowerVR G6430
+    - PowerVR SGX540
+    - PowerVR SGX544MP2
+    - Qualcomm Adreno 225
+    - Qualcomm Adreno 302
+    - Qualcomm Adreno 305
+    - Qualcomm Adreno 306
+    - Qualcomm Adreno 308
+    - Qualcomm Adreno 320
+    - Qualcomm Adreno 330
+    - Qualcomm Adreno 405
+    - Qualcomm Adreno 418
+    - Qualcomm Adreno 420
+    - Qualcomm Adreno 430
+    - Qualcomm Adreno 504
+    - Qualcomm Adreno 505
+    - Qualcomm Adreno 506
+    - Qualcomm Adreno 508
+    - Qualcomm Adreno 509
+    - Qualcomm Adreno 510
+    - Qualcomm Adreno 512
+    - Qualcomm Adreno 530
+    - Qualcomm Adreno 540
+    - Qualcomm Adreno 605
+    - Qualcomm Adreno 610
+    - Qualcomm Adreno 612
+    - Qualcomm Adreno 615
+    - Qualcomm Adreno 616
+    - Qualcomm Adreno 618
+    - Qualcomm Adreno 619
+    - Qualcomm Adreno 620
+    - Qualcomm Adreno 630
+    - Qualcomm Adreno 640
+    - Qualcomm Adreno 642
+    - Qualcomm Adreno 642L
+    - Qualcomm Adreno 650
+    - Qualcomm Adreno 660
+    - Qualcomm Adreno 675
+    - Qualcomm Adreno 680
+    - Qualcomm Adreno 685
+    - Qualcomm Adreno 690
   iso8601_reduced_precision_date:
     description: Date in ISO8601 reduced precision format
     examples:
@@ -118,6 +208,115 @@ definitions:
     required:
     - sizeMax
     type: object
+  soc_data:
+    enum:
+    - Amlogic S905x2
+    - Amlogic S905y2
+    - Google Tensor GS101
+    - Google Tensor GS201
+    - HiSilicon Kirin 659
+    - HiSilicon Kirin 970
+    - Intel Atom Z2560
+    - Intel Atom Z3560
+    - Intel Atom Z3580
+    - Mediatek MT6768 Helio G85
+    - NVIDIA Tegra 4 (T114)
+    - NVIDIA Tegra K1 (T124)
+    - NVIDIA Tegra X1 (T210)
+    - NVIDIA Tegra X1+ (T210b01)
+    - NVIDIA Tegra X2 (T186)
+    - Qualcomm APQ8064 Snapdragon S4 Pro
+    - Qualcomm APQ8064T Snapdragon 600
+    - Qualcomm APQ8076 Snapdragon 652
+    - Qualcomm APQ8084 Snapdragon 805
+    - Qualcomm MSM8210 Snapdragon 200
+    - Qualcomm MSM8212 Snapdragon 200
+    - Qualcomm MSM8226 Snapdragon 400
+    - Qualcomm MSM8227 Snapdragon S4 Plus
+    - Qualcomm MSM8230 Snapdragon 400
+    - Qualcomm MSM8260A Snapdragon S4
+    - Qualcomm MSM8916 Snapdragon 410
+    - Qualcomm MSM8916T Snapdragon 412
+    - Qualcomm MSM8917 Snapdragon 425
+    - Qualcomm MSM8926 Snapdragon 400
+    - Qualcomm MSM8928 Snapdragon 400
+    - Qualcomm MSM8929 Snapdragon 415
+    - Qualcomm MSM8930AB Snapdragon 400
+    - Qualcomm MSM8937 Snapdragon 430
+    - Qualcomm MSM8939 Snapdragon 615
+    - Qualcomm MSM8939v2 Snapdragon 616
+    - Qualcomm MSM8940 Snapdragon 435
+    - Qualcomm MSM8952 Snapdragon 617
+    - Qualcomm MSM8953 Pro Snapdragon 626
+    - Qualcomm MSM8953 Snapdragon 625
+    - Qualcomm MSM8956 Snapdragon 650
+    - Qualcomm MSM8960 Snapdragon S4
+    - Qualcomm MSM8960 Snapdragon S4 Plus
+    - Qualcomm MSM8960DT Snapdragon S4 Pro
+    - Qualcomm MSM8960T Snapdragon S4 Pro
+    - Qualcomm MSM8974 Snapdragon 800
+    - Qualcomm MSM8974AB Snapdragon 801
+    - Qualcomm MSM8974AB-AB Snapdragon 801
+    - Qualcomm MSM8974AC Snapdragon 801
+    - Qualcomm MSM8974PRO Snapdragon 801
+    - Qualcomm MSM8976 Snapdragon 652
+    - Qualcomm MSM8992 Snapdragon 808
+    - Qualcomm MSM8994 Snapdragon 810
+    - Qualcomm MSM8996 Pro Snapdragon 821
+    - Qualcomm MSM8996 Snapdragon 820
+    - Qualcomm MSM8998 Snapdragon 835
+    - Qualcomm SDM429 Snapdragon 429
+    - Qualcomm SDM439 Snapdragon 439
+    - Qualcomm SDM632 Snapdragon 632
+    - Qualcomm SDM660 Snapdragon 630
+    - Qualcomm SDM660 Snapdragon 636
+    - Qualcomm SDM660 Snapdragon 660
+    - Qualcomm SDM665 Snapdragon 665
+    - Qualcomm SDM670 Snapdragon 670
+    - Qualcomm SDM710 Snapdragon 710
+    - Qualcomm SDM712 Snapdragon 712
+    - Qualcomm SDM835 Snapdragon 835
+    - Qualcomm SDM845 Snapdragon 845
+    - Qualcomm SM4350 Snapdragon 480
+    - Qualcomm SM6115 Snapdragon 662
+    - Qualcomm SM6150 Snapdragon 675
+    - Qualcomm SM7125 Snapdragon 720G
+    - Qualcomm SM7150-AA Snapdragon 730
+    - Qualcomm SM7150-AB Snapdragon 730G
+    - Qualcomm SM7150-AC Snapdragon 732G
+    - Qualcomm SM7225 Snapdragon 750G
+    - Qualcomm SM7225 Snapdragon 750G 5G
+    - Qualcomm SM7250 Snapdragon 765G
+    - Qualcomm SM7325 Snapdragon 778G 5G
+    - Qualcomm SM7325-AE Snapdragon 778G+ 5G
+    - Qualcomm SM7350-AB Snapdragon 780G 5G
+    - Qualcomm SM8150 Snapdragon 855
+    - Qualcomm SM8150-AC Snapdragon 855+
+    - Qualcomm SM8150-AC Snapdragon 860
+    - Qualcomm SM8250 Snapdragon 865
+    - Qualcomm SM8250-AB Snapdragon 865+
+    - Qualcomm SM8250-AC Snapdragon 870
+    - Qualcomm SM8350 Snapdragon 888
+    - Samsung Exynos 4210
+    - Samsung Exynos 4412
+    - Samsung Exynos 5250
+    - Samsung Exynos 5420
+    - Samsung Exynos 5422
+    - Samsung Exynos 5433
+    - Samsung Exynos 7420
+    - Samsung Exynos 7578
+    - Samsung Exynos 7580
+    - Samsung Exynos 7880
+    - Samsung Exynos 7904
+    - Samsung Exynos 8890
+    - Samsung Exynos 9609
+    - Samsung Exynos 9611
+    - Samsung Exynos 9810
+    - Samsung Exynos 9820
+    - Samsung Exynos 9825
+    - TI OMAP4430
+    - TI OMAP4460
+    type: string
   valid_architectures:
     enum:
     - arm
@@ -128,17 +327,11 @@ definitions:
   valid_branches:
     description: Valid branches a device can be on
     enum:
-    - pie
-    - pie_plus
-    - ten
-    - ten_plus
-    - eleven
-    - eleven_plus
-    - twelve
-    - twelve_plus
-    - thirteen
-    - thirteen_plus
-    type: string
+    - 16.0
+    - 16.1
+    - 17.0
+    - 17.1
+    type: number
   valid_dimension:
     oneOf:
     - "$ref": "#/definitions/dimension_string"
@@ -254,16 +447,17 @@ properties:
       - None
   before_install:
     "$id": "/properties/before_install"
-    minLength: 3
-    type: string
+    "$ref": "#/definitions/before_install_format"
   before_install_custom:
     "$id": "/properties/before_install_custom"
     minLength: 3
     type: string
   before_recovery_install:
     "$id": "/properties/before_recovery_install"
-    minLength: 3
-    type: string
+    oneOf:
+    - "$ref": "#/definitions/before_recovery_install_format"
+    - minLength: 3
+      type: string
   bluetooth:
     "$id": "/properties/bluetooth"
     properties:
@@ -274,6 +468,7 @@ properties:
           - A2DP
           - A2DP + aptX
           - A2DP + aptX HD
+          - A2DP + aptX HD + aptx Adaptive
           type: string
         minItems: 1
         type: array
@@ -328,7 +523,10 @@ properties:
     - Cortex-A7
     - Cortex-A72
     - Cortex-A73 & Cortex-A53
+    - Cortex-X1 & Cortex-A76 & Cortex-A55
     - Cortex-A9
+    - Cortex-X1 & Cortex-A76 & Cortex-A55
+    - Cortex-X1 & Cortex-A78 & Cortex-A55
     - Denver
     - Denver 2 & Cortex-A57
     - Exynos M1 & Cortex-A53
@@ -405,6 +603,12 @@ properties:
   download_boot:
     "$id": "/properties/download_boot"
     type: string
+  format_on_upgrade:
+    "$id": "/properties/format_on_upgrade"
+    enum:
+      - true
+      - false
+      - fbe
   gpu:
     "$id": "/properties/gpu"
     enum:

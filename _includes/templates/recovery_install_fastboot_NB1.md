@@ -39,7 +39,5 @@ Now you can use the previously generated OTP to unlock the bootloader of your de
     
     {% include alerts/note.html content="The tool will try to automatically unlock the device in fastboot mode. However, sometimes that can fail. Please put the device to fastboot mode manually if that happens." %}
 
-{% if device.before_recovery_install %}
-{% capture path %}templates/device_specific/before_recovery_install_{{ device.before_recovery_install }}.md{% endcapture %}
-{% include {{ path }} %}
-{% endif %}
+{% include snippets/before_recovery_install.md %}
+
