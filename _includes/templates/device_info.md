@@ -29,7 +29,7 @@ There are multiple variants of this device. [Make sure you're viewing the right 
 - [Update to a newer vendor firmware version]({{ path_prefix | append: "/fw_update" | append: path_postfix | relative_url }})
 {%- endif %}
 - [Update to a newer build of the same XPerience version]({{ path_prefix | append: "/update" | append: path_postfix | relative_url }})
-- [Upgrade to a higher Android version (e.g. Android 12 -> Android 13)]({{ path_prefix | append: "/upgrade" | append: path_postfix | relative_url }})
+- [Upgrade to a higher Android version (e.g. Android 13 -> Android 14)]({{ path_prefix | append: "/upgrade" | append: path_postfix | relative_url }})
 
 {% if device.note_title and device.note_title != "" %}
 {% include templates/device_info_note.md %}
