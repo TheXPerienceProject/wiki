@@ -9,7 +9,10 @@ Do **not** continue after something fails!" %}
 2. Make sure your computer has `adb`{% unless device.install_method == 'heimdall' or device.install_method == 'dd' %} and `fastboot`{% endunless %}. Setup instructions can be found [here]({{ "help/adb-fastboot-guide/" | relative_url }}).
 3. Enable [USB debugging]({{ "help/adb-fastboot-guide/#setting-up-adb" | relative_url }}) on your device.
 {%- if device.models %}
-4. Make sure that your model is actually listed in the "Supported models" section [here]({{ "devices/" | append: device.codename | append: "#supported-models" | relative_url }}) (exact match required!)
+4. Make sure that your model number is one of the following (exact match required!):
+ {%- for model in device.models %}
+ * {{ model }}
+ {%- endfor %}
 {%- endif %}
 5. Boot your device with the stock OS at least once and check every functionality.
   Make sure that you can send and receive SMS and place and receive calls (also via WiFi and LTE, if available), otherwise it won't work on XPerience either! Additionally, some devices require that VoLTE/VoWiFi be utilized once on stock to provision IMS.
