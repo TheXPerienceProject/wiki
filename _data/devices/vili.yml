@@ -12,7 +12,7 @@ codename: vili
 cpu: Kryo 680
 cpu_cores: '8'
 cpu_freq: 2.4 GHz
-current_branch: 17.1
+current_branch: 18
 dimensions: {width: '75.73 mm (2.98 in)', height: '160.53 mm (6.32 in)', depth: '6.81 mm (0.26 in)'}
 download_boot: With the device powered off, hold <kbd>Volume Down</kbd> + <kbd>Power</kbd>.
   Keep holding both buttons until the word "FASTBOOT" appears on the screen, then release.
@@ -21,7 +21,7 @@ image: vili.png
 install_method: fastboot_xiaomi_virtual_ab
 is_ab_device: true
 kernel: android_kernel_xiaomi_sm8350
-maintainers: [Kισżż]
+maintainers: [Kισżż, Jezzay97]
 models: [2109119DG]
 name: 11T Pro
 network: [2G GSM, 2G CDMA, 3G UMTS, 4G LTE, 5G NR]
@@ -37,5 +37,7 @@ tree: android_device_xiaomi_vili
 type: phone
 vendor: Xiaomi
 vendor_short: xiaomi
-versions: [17.1]
+versions: [18]
+deprecated_versions: [17.1]
+deprecated: false
 wifi: 802.11 a/b/g/n/ac/ax; Wi-Fi Direct; dual band

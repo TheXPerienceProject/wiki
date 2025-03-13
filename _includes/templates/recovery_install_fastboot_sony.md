@@ -72,7 +72,7 @@ adb reboot bootloader
 fastboot devices
 ```
     {% include alerts/tip.html content="If you see `no permissions fastboot` while on Linux or macOS, try running `fastboot` as root." %}
-{% if device.has_recovery_partition %}
+{% if device.recovery_partition_name  %}
 5. Flash the custom recovery to `recovery` partition:
 ```
 fastboot flash recovery path-to-recovery-file.img

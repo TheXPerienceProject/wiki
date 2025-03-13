@@ -32,14 +32,14 @@ The updater app does not support upgrades from one version of XPerience to anoth
 6. Now tap **Format Data** and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage.
 7. Sideload the XPerience `.zip` package:
     * On the device, select "Advanced", "ADB Sideload", then swipe to begin sideload.
-    * On the host machine, sideload the package using: `adb sideload filename.zip`.
+    * On the host machine, sideload the package using: `adb sideload xperience-19.0.0-{{ site.time | date: "%Y%m%d" }}-{{ site.time | date: "%H%M%S" }}-UNOFFICIAL-{{ device.codename }}.zip`.
         {% include alerts/specific/tip_adb_flash_success.html %}
 {% else %}
 5. Now tap **Factory Reset**, then **Format data / factory reset** and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage, as well as format your cache partition (if you have one).
 6. Return to the main menu.
 7. Sideload the XPerience `.zip` package:
     * On the device, select "Apply Update", then "Apply from ADB" to begin sideload.
-    * On the host machine, sideload the package using: `adb sideload filename.zip`.
+    * On the host machine, sideload the package using: `adb sideload xperience-19.0.0-{{ site.time | date: "%Y%m%d" }}-{{ site.time | date: "%H%M%S" }}-UNOFFICIAL-{{ device.codename }}.zip`.
         {% include alerts/specific/tip_adb_flash_success.html %}
 {% endif %}
 {% if device.uses_custom_recovery %}
