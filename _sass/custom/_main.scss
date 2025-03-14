@@ -642,3 +642,9 @@ a {
 .form-group .material-icons {
   font-size: 16px;
 }
+
+.download::after {
+  font-family: "Material Icons";
+  content: 'download';
+  vertical-align: middle;
+}
