@@ -139,7 +139,7 @@ Enter the following to initialize the repository:
 
 ```
 cd ~/xpe
-repo init -u https://github.com/TheXPerienceProject/manifest -b branch_name
+repo init -u https://github.com/TheXPerienceProject/manifest -b branch_name --git-lfs --no-clone-bundle
 ```
 
 ### Download the source code
