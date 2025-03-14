@@ -41,6 +41,10 @@ def main(args):
         print("Could not find yaml!")
         exit(-1)
 
+    # Create fw_update directory if it doesn't exist
+    if not os.path.exists(FW_UPDATE_PATH):
+        os.makedirs(FW_UPDATE_PATH)
+
     for i in range(amount):
         new_device = f"{device}_variant{i+1}"
 
@@ -59,35 +63,58 @@ def main(args):
 
         # Info page
         new_info = f"{INFO_PATH}/{new_device}.md"
-        replace_pages(orig_info, new_info, device, new_device, i + 1)
+        if os.path.isfile(orig_info):
+            replace_pages(orig_info, new_info, device, new_device, i + 1)
+        else:
+            open(new_info, 'a').close()
 
         # Install page
         new_install = f"{INSTALL_PATH}/{new_device}.md"
-        replace_pages(orig_install, new_install, device, new_device, i + 1, "install")
+        if os.path.isfile(orig_install):
+            replace_pages(orig_install, new_install, device, new_device, i + 1, "install")
+        else:
+            open(new_install, 'a').close()
 
         # Build page
         new_build = f"{BUILD_PATH}/{new_device}.md"
-        replace_pages(orig_build, new_build, device, new_device, i + 1, "build")
+        if os.path.isfile(orig_build):
+            replace_pages(orig_build, new_build, device, new_device, i + 1, "build")
+        else:
+            open(new_build, 'a').close()
 
         # Update page
         new_update = f"{UPDATE_PATH}/{new_device}.md"
-        replace_pages(orig_update, new_update, device, new_device, i + 1, "update")
+        if os.path.isfile(orig_update):
+            replace_pages(orig_update, new_update, device, new_device, i + 1, "update")
+        else:
+            open(new_update, 'a').close()
 
         # Upgrade page
         new_upgrade = f"{UPGRADE_PATH}/{new_device}.md"
-        replace_pages(orig_upgrade, new_upgrade, device, new_device, i + 1, "upgrade")
+        if os.path.isfile(orig_upgrade):
+            replace_pages(orig_upgrade, new_upgrade, device, new_device, i + 1, "upgrade")
+        else:
+            open(new_upgrade, 'a').close()
 
+        # Firmware update page
+        new_fw = f"{FW_UPDATE_PATH}/{new_device}.md"
         if os.path.isfile(orig_fw):
-            new_fw = f"{FW_UPDATE_PATH}/{new_device}.md"
             replace_pages(orig_fw, new_fw, device, new_device, i + 1, "fw_update")
+        else:
+            open(new_fw, 'a').close()
 
     # Original info and upgrade pages
-    make_common_page("templates/variant_info.md", orig_info, device)
-    make_common_page("templates/variant_upgrade.md", orig_upgrade, device)
+    if os.path.isfile(orig_info):
+        make_common_page("templates/variant_info.md", orig_info, device)
+    if os.path.isfile(orig_upgrade):
+        make_common_page("templates/variant_upgrade.md", orig_upgrade, device)
 
-    os.remove(orig_install)
-    os.remove(orig_build)
-    os.remove(orig_update)
+    if os.path.isfile(orig_install):
+        os.remove(orig_install)
+    if os.path.isfile(orig_build):
+        os.remove(orig_build)
+    if os.path.isfile(orig_update):
+        os.remove(orig_update)
     os.remove(orig_yaml)
     if os.path.isfile(orig_fw):
         os.remove(orig_fw)
