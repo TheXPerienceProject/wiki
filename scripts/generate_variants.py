@@ -106,7 +106,7 @@ def replace_pages(orig, new, device, new_device, variant_nr, target=None):
         else:
             content = re.sub(
                 r"permalink: (.*)",
-                f"permalink: /devices/{device}/variant{variant_nr}/",
+                f"permalink: /devices/{device}/variant{variant_nr}/index.html",
                 content,
             )
         content = re.sub(r"device: (.*)", f"device: {new_device}", content)

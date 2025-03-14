@@ -17,6 +17,7 @@ dimensions: {width: '75.73 mm (2.98 in)', height: '160.53 mm (6.32 in)', depth: 
 download_boot: With the device powered off, hold <kbd>Volume Down</kbd> + <kbd>Power</kbd>.
   Keep holding both buttons until the word "FASTBOOT" appears on the screen, then release.
 recovery_partition_name: vendor_boot
+recovery_reboot: fastboot_menu
 gpu: Qualcomm Adreno 642L
 image: lisa.png
 install_method: fastboot_xiaomi_virtual_ab

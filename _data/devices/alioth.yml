@@ -26,6 +26,7 @@ dimensions:
 download_boot: With the device powered off, hold <kbd>Volume Down</kbd> + <kbd>Power</kbd>.
   Keep holding both buttons until the word "FASTBOOT" appears on the screen, then
   release.
+recovery_partition_name: vendor_boot
 gpu: Adreno 650
 install_method: fastboot_xiaomi_virtual_ab
 maintainers:

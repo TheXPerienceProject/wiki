@@ -15,6 +15,7 @@ current_branch: 19
 dimensions: {width: '75.9 mm (2.98 in)', height: '163.1 mm (6.67 in)', depth: '8.6 mm (0.26 in)'}
 download_boot: With the device powered off, hold <kbd>Volume Down</kbd> + <kbd>Power</kbd>.
   Keep holding both buttons until the word "FASTBOOT" appears on the screen, then release.
+recovery_partition_name: recovery
 gpu: Qualcomm Adreno 730
 image: diting.png
 install_method: fastboot_xiaomi_virtual_ab
