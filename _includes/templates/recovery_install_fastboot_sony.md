@@ -72,7 +72,7 @@ adb reboot bootloader
 fastboot devices
 ```
     {% include alerts/tip.html content="If you see `no permissions fastboot` while on Linux or macOS, try running `fastboot` as root." %}
-{% if device.has_recovery_partition %}
+{% if device.recovery_partition_name  %}
 5. Flash the custom recovery to `recovery` partition:
 ```
 fastboot flash recovery path-to-recovery-file.img
@@ -90,11 +90,11 @@ fastboot reboot
 ```
 7. Push the custom recovery image to your device:
 ```
-adb push path-to-recovery-file.img /sdcard
+adb -d push path-to-recovery-file.img /sdcard
 ```
 8. Enter shell on the device:
 ```
-adb shell
+adb -d shell
 ```
 9. Flash custom recovery to `recovery` permanently:
 ```

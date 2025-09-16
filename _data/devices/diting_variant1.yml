@@ -11,10 +11,11 @@ codename: diting
 cpu: Cortex-X2
 cpu_cores: '8'
 cpu_freq: 3 GHz
-current_branch: 18
+current_branch: 20
 dimensions: {width: '75.9 mm (2.98 in)', height: '163.1 mm (6.67 in)', depth: '8.6 mm (0.26 in)'}
 download_boot: With the device powered off, hold <kbd>Volume Down</kbd> + <kbd>Power</kbd>.
   Keep holding both buttons until the word "FASTBOOT" appears on the screen, then release.
+recovery_partition_name: recovery
 gpu: Qualcomm Adreno 730
 image: diting.png
 install_method: fastboot_xiaomi_virtual_ab
@@ -24,10 +25,12 @@ maintainers: [Kισżż]
 models: [22081212G, 22081212R, 22081212UG]
 name: 12T Pro
 network: [2G GSM, 2G CDMA, 3G UMTS, 4G LTE, 5G NR]
-peripherals: [A-GPS, Accelerometer, Compass, Color Spectrum, Dual SIM, dual stereo speakers, Dual-frequency GNSS, Fingerprint under display optical, Galileo, GLONASS, GPS, NAVIC, QZSS, Gyroscope, Infrared sensor, Light sensor, NFC, proximity sensor, USB OTG, Wi-Fi Display]
+peripherals: [A-GPS, Accelerometer, Compass, Color Spectrum, Dual SIM, eSIM, dual stereo speakers, Dual-frequency GNSS, Fingerprint under display optical, Galileo, GLONASS, GPS, NAVIC, QZSS, Gyroscope, Infrared sensor, Light sensor, NFC, proximity sensor, USB OTG, Wi-Fi Display]
 ram: 8/12 GB
 recovery_boot: With the device powered off, hold <kbd>Volume Up</kbd> + <kbd>Power</kbd>.
-  Keep holding both buttons until the "MI" logo appears on the screen, then release.
+  Keep holding both buttons until the "MI" logo appears on the screen, then release..
+recovery_partition_name: recovery
+recovery_reboot: fastboot_menu
 release: 2022-10
 screen: {size: '164.1 mm (6.67 in)', density: 446, resolution: '1220x2712 ', technology: '120Hz AMOLED'}
 soc: Qualcomm SM8475 Snapdragon 8+ Gen 1 3.0 Ghz
@@ -36,8 +39,8 @@ tree: android_device_xiaomi_diting
 type: phone
 vendor: Xiaomi
 vendor_short: xiaomi
-versions: [18]
-deprecated_versions: [17.1]
+versions: [20.0]
+deprecated_versions: [17.1,18,19]
 deprecated: false
 wifi: 802.11 a/b/g/n/ac/ax; Wi-Fi Direct; dual band
 variant: 1

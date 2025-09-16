@@ -9,7 +9,7 @@ Before proceeding, ensure the data you would like to retain is backed up to your
 1. Connect the device to your PC via USB.
 2. On the computer, open a command prompt (on Windows) or terminal (on Linux or macOS) window, and type:
 ```
-adb reboot bootloader
+adb -d reboot bootloader
 ```
     {% if device.download_boot %}
     You can also boot into fastboot mode via a key combination:
@@ -32,7 +32,7 @@ fastboot devices
 
 {% include snippets/before_recovery_install.md %}
 
-{% if device.is_ab_device and device.has_recovery_partition != true %}
+{% if device.is_ab_device and device.recovery_partition_name  != true %}
     {% include templates/recovery_install_fastboot_ab.md %}
 {% else %}
     {% include templates/recovery_install_fastboot_generic.md %}

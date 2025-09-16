@@ -20,7 +20,7 @@ Now you need to boot your device to download mode. Follow these steps for bootlo
     1. Turn off your phone.
     2. Connect the USB cable to the device only and not the computer.
     3. Press and hold Volume Down + Power key together till you reach the screen reads that reads “Download mode”.
-    Alternatively, you can also use the command ```adb reboot bootloader``` from the stock ROM to bring the phone to download mode.
+    Alternatively, you can also use the command ```adb -d reboot bootloader``` from the stock ROM to bring the phone to download mode.
 
 4. Generate OTP for the Unlock Tool:
 To avoid misuse and limit usage, the tool uses OTP (One-time password). Before you unlock you need to get an OTP. You can generate one from [here](https://www.techmesto.com/nokia-ubl-otp/)

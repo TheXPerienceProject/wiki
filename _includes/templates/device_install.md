@@ -9,7 +9,10 @@ Do **not** continue after something fails!" %}
 2. Make sure your computer has `adb`{% unless device.install_method == 'heimdall' or device.install_method == 'dd' %} and `fastboot`{% endunless %}. Setup instructions can be found [here]({{ "help/adb-fastboot-guide/" | relative_url }}).
 3. Enable [USB debugging]({{ "help/adb-fastboot-guide/#setting-up-adb" | relative_url }}) on your device.
 {%- if device.models %}
-4. Make sure that your model is actually listed in the "Supported models" section [here]({{ "devices/" | append: device.codename | append: "#supported-models" | relative_url }}) (exact match required!)
+4. Make sure that your model number is one of the following (exact match required!):
+ {%- for model in device.models %}
+ * {{ model }}
+ {%- endfor %}
 {%- endif %}
 5. Boot your device with the stock OS at least once and check every functionality.
   Make sure that you can send and receive SMS and place and receive calls (also via WiFi and LTE, if available), otherwise it won't work on XPerience either! Additionally, some devices require that VoLTE/VoWiFi be utilized once on stock to provision IMS.
@@ -25,7 +28,7 @@ Do **not** continue after something fails!" %}
 
 {% capture bootloader %}
 Your device must be on bootloader version {% for el in device.required_bootloader %} {% if forloop.last %} `{{ el }}` {% else %} `{{ el }}` / {% endif %} {% endfor %}, otherwise the instructions found in this page will not work.
-The current bootloader version can be checked by running the command `getprop ro.bootloader` in a terminal app or an `adb shell` from a command prompt (on Windows) or terminal (on Linux or macOS) window.
+The current bootloader version can be checked by running the command `getprop ro.bootloader` in a terminal app or an `adb -d shell` from a command prompt (on Windows) or terminal (on Linux or macOS) window.
 {% endcapture %}
 {% include alerts/warning.html content=bootloader %}
 {% endif %}
@@ -78,9 +81,9 @@ There are no recovery installation instructions for this discontinued device.
 {% if device.uses_custom_recovery %}
 3. Now tap **Wipe**.
 4. Now tap **Format Data** and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage.
-5. Sideload the XPerience `.zip` package:
+5. Sideload the XPerience (example) `xperience-{{ device.current_branch}}.0.0-{{ site.time | date: "%Y%m%d" }}-{{ site.time | date: "%H%M%S" }}-UNOFFICIAL-{{ device.codename }}.zip` package:
     * On the device, select "Advanced", "ADB Sideload", then swipe to begin sideload.
-    * On the host machine, sideload the package using: `adb sideload filename.zip`.
+    * On the host machine, sideload the package using: `adb -d sideload xperience-{{ device.current_branch}}.0.0-{{ site.time | date: "%Y%m%d" }}-{{ site.time | date: "%H%M%S" }}-UNOFFICIAL-{{ device.codename }}.zip`.
         {% include alerts/specific/tip_adb_flash_success.html %}
 {% else %}
 3. Now tap **Factory Reset**, then **Format data / factory reset** and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage, as well as format your cache partition (if you have one).
@@ -95,13 +98,13 @@ There are no recovery installation instructions for this discontinued device.
         {% include alerts/specific/note_retrofit_sideload_failed.html %}
 {%- endif %}
 {%- endif %}
-5. Sideload the XPerience `.zip` package:
+5. Sideload the XPerience (example) `xperience-{{ device.current_branch}}.0.0-{{ site.time | date: "%Y%m%d" }}-{{ site.time | date: "%H%M%S" }}-UNOFFICIAL-{{ device.codename }}.zip` package:
     * On the device, select "Apply Update", then "Apply from ADB" to begin sideload.
-    * On the host machine, sideload the package using: `adb sideload filename.zip`.
+    * On the host machine, sideload the package using: `adb -d sideload xperience-{{ device.current_branch}}.0.0-{{ site.time | date: "%Y%m%d" }}-{{ site.time | date: "%H%M%S" }}-UNOFFICIAL-{{ device.codename }}.zip`.
         {% include alerts/specific/tip_adb_flash_success.html %}
 {% endif %}
 {% if device.uses_custom_recovery %}
-8. Once you have installed everything successfully, run 'adb reboot'.
+8. Once you have installed everything successfully, run 'adb -d reboot'.
 {% else %}
 8. Once you have installed everything successfully, click the back arrow in the top left of the screen, then "Reboot system now".
 {% endif %}

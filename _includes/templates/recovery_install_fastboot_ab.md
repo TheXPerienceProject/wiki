@@ -5,7 +5,7 @@
 {% assign custom_recovery_link = "https://dl.twrp.me/" | append: device.codename %}
 {% endif %}
 
-{% if device.has_recovery_partition %}
+{% if device.recovery_partition_name  %}
 ## Booting a custom recovery using `fastboot`
 {% else %}
 
@@ -29,7 +29,7 @@
 2. Connect your device to your PC via USB if it isn't already.
 3. If your device isn't already in fastboot mode, on the computer, open a command prompt (on Windows) or terminal (on Linux or macOS) window, and type:
 ```
-adb reboot bootloader
+adb -d reboot bootloader
 ```
     {% if device.download_boot %}
     You can also boot into fastboot mode via a key combination:
@@ -45,7 +45,7 @@ fastboot devices
    * on Linux or macOS: If you see `no permissions fastboot` try running `fastboot` as root. When the output is empty, check your USB cable (preferably use a USB Type-A 2.0 one or a USB hub) and port!
 
     {% include alerts/tip.html content="Some devices have buggy USB support while in bootloader mode, if you see `fastboot` hanging with no output when using commands such as `fastboot getvar ... `, `fastboot boot ...`, `fastboot flash ...` you may want to try a different USB port (preferably a USB Type-A 2.0 one) or a USB hub." %}
-{% if device.has_recovery_partition %}
+{% if device.recovery_partition_name  %}
 5. Flash the recovery on your device by typing:
 ```
 fastboot flash recovery <recovery_filename>.img

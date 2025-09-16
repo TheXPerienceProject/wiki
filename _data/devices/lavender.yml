@@ -13,6 +13,7 @@ current_branch: 17.1
 dimensions: {width: '75.2 mm (2.96 in)', height: '159.2 mm (6.27 in)', depth: '8.1 mm (0.32 in)'}
 download_boot: With the device powered off, hold <kbd>Volume Down</kbd> + <kbd>Power</kbd>.
   Keep holding both buttons until the word "FASTBOOT" appears on the screen, then release.
+recovery_partition_name: boot
 gpu: Qualcomm Adreno 512
 image: lavender.png
 install_method: fastboot_xiaomi

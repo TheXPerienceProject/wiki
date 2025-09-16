@@ -6,219 +6,196 @@ search: exclude
 ---
 
 <script type="text/javascript">
+const IS_DISCONTINUED_VISIBLE = 'is_discontinued_visible';
 
-const IS_DISCONTINUED_VISIBLE = 'is_discontinued_visible'
-
-$(window).on('load', function()
-{
-  if (!isDiscontinuedVisible()) {
-    hideTablesIfNeeded();
-  } else {
-    $('.discontinued').toggleClass("hidden");
-    $('.form-check-input').prop('checked', true);
-  }
+$(window).on('load', function() {
+    if (!isDiscontinuedVisible()) {
+        hideTablesIfNeeded();
+    } else {
+        $('.discontinued').toggleClass("hidden");
+        $('.form-check-input').prop('checked', true);
+    }
 });
 
-function toggleDiscontinued()
-{
-  setDiscontinuedVisible(!isDiscontinuedVisible())
-  $('.discontinued').toggleClass("hidden");
-  hideTablesIfNeeded();
+function toggleDiscontinued() {
+    setDiscontinuedVisible(!isDiscontinuedVisible());
+    $('.discontinued').toggleClass("hidden");
+    hideTablesIfNeeded();
 }
 
-function hideTablesIfNeeded()
-{
-  $(".devices").each(function () {
-    vendor = $(this).attr("data-vendor");
-    if ($(this).find("div:visible").length == 0 && $(this).is(":visible")) {
-      $("*[data-vendor=" + vendor + "]").hide();
-    } else {
-      $("*[data-vendor=" + vendor + "]").show();
-    }
-  });
+function hideTablesIfNeeded() {
+    $(".devices").each(function() {
+        vendor = <span class="math-inline">\(this\)\.attr\("data\-vendor"\);
+if \(</span>(this).find("div:visible").length == 0 && $(this).is(":visible")) {
+            $("*[data-vendor=" + vendor + "]").hide();
+        } else {
+            $("*[data-vendor=" + vendor + "]").show();
+        }
+    });
 }
 
-function isDiscontinuedVisible()
-{
-  return localStorage.getItem(IS_DISCONTINUED_VISIBLE) === '1';
+function isDiscontinuedVisible() {
+    return localStorage.getItem(IS_DISCONTINUED_VISIBLE) === '1';
 }
 
-function setDiscontinuedVisible(visible)
-{
-  localStorage.setItem(IS_DISCONTINUED_VISIBLE, visible ? '1' : '0');
+function setDiscontinuedVisible(visible) {
+    localStorage.setItem(IS_DISCONTINUED_VISIBLE, visible ? '1' : '0');
 }
 </script>
 
 <div class="container page">
 
-  <h1>{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
 
-  Rows with a lower opacity are no longer officially supported and the pages exist for reference only.<br/>
-  You can show them by checking the following checkbox:<br/><br/>
+    Rows with a lower opacity are no longer officially supported and the pages exist for reference only.<br/>
+    You can show them by checking the following checkbox:<br/><br/>
 
-{%- assign devices = "" | split: " " %}
-{%- assign variants = "" | split: " " %}}
-{%- for device in site.data.devices %}
-{%- assign data = device[1] %}
-{%- if data.variant == None or data.variant == 1 %}
-{%- assign devices = devices | push: data %}
-{%- elsif data.variant %}
-{%- assign variants = variants | push: data %}
-{%- endif %}
-{%- endfor %}
-
-{%- assign sorted = devices | sort_natural: 'name' | sort_natural: 'vendor' %}
-{%- assign lastVendor = "" %}
-
-<div class="form-check form-check-inline form-check-discontinued">
-  <label class="form-check-label">
-    <input class="form-check-input" type="checkbox" onclick="toggleDiscontinued()">Show discontinued devices<span class="form-check-sign">
-        <span class="check"></span>
-    </span>
-  </label>
-</div><br/><br/>
-
-Select a vendor to jump to:<br/>
-
-<div class="vendor-container">
-{%- assign vendors = "" | split: " " %}
-{%- for device in sorted %}
-{%- if device.vendor != lastVendor %}
-{%- assign vendors = vendors | push: device.vendor %}
-{%- assign lastVendor = device.vendor %}
-  <div data-vendor="{{ lastVendor | slugify }}"><a href="#{{ lastVendor | slugify }}" data-vendor="{{ lastVendor | slugify }}">{{ lastVendor }}</a></div>
-{%- endif %}
-{%- endfor %}
-</div>
-
-{%- for device in sorted %}
-{%- if device.vendor != lastVendor %}
-{%- assign lastVendor = device.vendor %}
-{% capture vendorId %}{{ device.vendor | slugify }}{% endcapture %}
-
-<h2 class="h2" id="{{ vendorId }}" data-vendor="{{ vendorId }}">{{ device.vendor}}</h2>
-
-<a href="#devices" class="top" data-vendor="{{ vendorId }}"><i class="material-icons">arrow_drop_up</i>Top</a>
-
-<div class="devices" data-vendor="{{ vendorId }}">
-{%- endif %}
-
-{%- assign url = "devices/" | append: device.codename | append: "/" | relative_url %}
-{%- if device.maintainers == empty %}
-{%- assign class="discontinued hidden" %}
-{%- else %}
-{%- assign class="" %}
-{%- endif -%}
-
-{%- capture imagePath %}{{ "https://raw.githubusercontent.com/TheXPerienceProject/wiki/master" | append: "/images/devices/small/" | append: device.codename }}.png{% endcapture %}
-
-<div class="item {{ class }}" onClick="location.href='{{ url }}'" data-codename="{{ device.codename }}" data-variant="{{ device.variant }}" data-url="{{ url }}">
-  <div class="deviceimage">
-    <a href="{{ url }}"><img src="{{ imagePath }}" alt="device-image for {{ device.codename }}" loading="lazy" /></a>
-  </div>
-  <div class="name">
-    <a href="{{ url }}">
-      {%- include snippets/get_displayname.md device=device %}
-      <span class="devicename">{{ display_name }}</span>
-    </a><br>
-    {%- if device.variant %}
-    <div class="variant-container">
-      <span class="aka">AKA</span>
-      {%- assign device_variants = "" | split: " " %}
-      {%- assign sorted_variants = variants | sort_natural: 'variant' %}
-      {%- for variant in sorted_variants %}
-        {%- if variant.codename == device.codename %}
-          {%- assign device_variants = device_variants | push: variant %}
+    {%- assign devices = "" | split: " " %}
+    {%- assign variants = "" | split: " " %}
+    {%- for device in site.data.devices %}
+        {%- assign data = device[1] %}
+        {%- if data.variant == None or data.variant == 1 %}
+            {%- assign devices = devices | push: data %}
+        {%- elsif data.variant %}
+            {%- assign variants = variants | push: data %}
         {%- endif %}
-      {%- endfor %}
-      {%- for variant in device_variants %}
-      {%- include snippets/get_displayname.md device=variant %}
-      <span class="variant"><a href="{{ url }}">{{ display_name }}</a></span>
-      {%- unless forloop.last %}
-      <span class="bullet"></span>
-      {%- endunless %}
-      {%- endfor %}
-    </div>
-    <div class="variants-list">
-      <ul>
-        {%- assign variant_url = "devices/" | append: device.codename | append: "/variant1/"| relative_url %}
-        {%- include snippets/get_displayname.md device=device %}
-        <li onClick="location.href='{{ variant_url }}'"><a href="{{ variant_url }}">{{ display_name }}</a></li>
-        {%- for variant in device_variants %}
-        {%- assign variant_url = "devices/" | append: variant.codename | append: "/variant" | append: variant.variant | append: "/" | relative_url %}
-        {%- include snippets/get_displayname.md device=variant %}
-        <li onClick="location.href='{{ variant_url }}'"><a href="{{ variant_url }}">{{ display_name }}</a></li>
-        {%- endfor %}
-      </ul>
-    </div>
-    {%- endif %}
-    <a href="{{ url }}">
-      <span class="codename">{{ device.codename }}</span>
-    </a>
-  </div>
-</div>
+    {%- endfor %}
 
-{%- if sorted[forloop.index].vendor != lastVendor %}
-</div> <!-- div class="devices" -->
-{% endif %}
-{%- endfor %}
+    {%- assign sorted = devices | sort_natural: 'name' | sort_natural: 'vendor' %}
+    {%- assign lastVendor = "" %}
+
+    <div class="form-check form-check-inline form-check-discontinued">
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" onclick="toggleDiscontinued()">Show discontinued devices<span class="form-check-sign">
+                <span class="check"></span>
+            </span>
+        </label>
+    </div><br/><br/>
+
+    Select a vendor to jump to:<br/>
+
+    <div class="vendor-container">
+        {%- assign vendors = "" | split: " " %}
+        {%- for device in sorted %}
+            {%- if device.vendor != lastVendor %}
+                {%- assign vendors = vendors | push: device.vendor %}
+                {%- assign lastVendor = device.vendor %}
+                <div data-vendor="{{ lastVendor | slugify }}"><a href="#{{ lastVendor | slugify }}" data-vendor="{{ lastVendor | slugify }}">{{ lastVendor }}</a></div>
+            {%- endif %}
+        {%- endfor %}
+    </div>
+
+    {%- for device in sorted %}
+        {%- if device.vendor != lastVendor %}
+            {%- assign lastVendor = device.vendor %}
+            {% capture vendorId %}{{ device.vendor | slugify }}{% endcapture %}
+
+            <h2 class="h2" id="{{ vendorId }}" data-vendor="{{ vendorId }}">{{ device.vendor}}</h2>
+
+            <a href="#devices" class="top" data-vendor="{{ vendorId }}"><i class="material-icons">arrow_drop_up</i>Top</a>
+
+            <div class="devices" data-vendor="{{ vendorId }}">
+        {%- endif %}
+
+        {%- assign url = "devices/" | append: device.codename | append: "/" | relative_url %}
+        {%- if device.maintainers == empty %}
+            {%- assign class="discontinued hidden" %}
+        {%- else %}
+            {%- assign class="" %}
+        {%- endif -%}
+
+        {%- capture imagePath %}{{ "/images/devices/small/" | append: device.codename }}.png{% endcapture %}
+
+        <div class="item {{ class }}" onClick="location.href='{{ url }}'" data-codename="{{ device.codename }}" data-variant="{{ device.variant }}" data-url="{{ url }}">
+            <div class="deviceimage">
+                <a href="{{ url }}"><img src="{{ imagePath }}" alt="device-image for {{ device.codename }}" loading="lazy" /></a>
+            </div>
+            <div class="name">
+                <div class="variant-wrapper">
+                    {%- assign device_variants = "" | split: " " %}
+                    {%- assign sorted_variants = variants | sort_natural: 'variant' %}
+                    {%- for variant in sorted_variants %}
+                        {%- if variant.codename == device.codename %}
+                            {%- assign device_variants = device_variants | push: variant %}
+                        {%- endif %}
+                    {%- endfor %}
+                    {%- assign all_variants = device_variants | push: device %}
+                    {%- assign all_variants = all_variants | sort_natural: 'variant' %}
+                    {%- assign seen_codenames = "" | split: " " %}
+                    {%- for variant in all_variants %}
+                        <div class="variant">
+                            {%- include snippets/get_displayname.md device=variant %}
+                            <span class="variant-name"><a href="{{ url }}">{{ display_name }}</a></span>
+                            {%- unless seen_codenames contains variant.codename %}
+                                <span class="variant-codename">{{ variant.codename }}</span>
+                                {%- assign seen_codenames = seen_codenames | push: variant.codename %}
+                            {%- endunless %}
+                        </div>
+                    {%- endfor %}
+                </div>
+            </div>
+        </div>
+
+        {%- if sorted[forloop.index].vendor != lastVendor %}
+            </div> {% endif %}
+    {%- endfor %}
 </div>
 
 <div class="page-overlay">
-  <div class="popup-overlay">
-    <div class="popup-content">
-      <div class="popup-close-action"><span class="material-icons close-action">close</span></div>
-      <div class="popup-header">
-        <span class="popup-title">Select your variant</span><br/>
-        <span class="popup-subtitle">codename</span>
-      </div>
-      <div class="popup-body">
-        <p>
-          These devices all use the same XPerience build.
-          The vendor may have released the same device under multiple names, or the maintainer may support multiple devices using the same code.
-        </p>
-        <p style="margin-bottom: 0px;">
-          Select your variant to make sure your guides are correct. Not sure which?<br/>
-          <a href="" id="compare-link">Compare their differences.</a>
-        </p>
-        <div class="popup-variants-list"></div>
-      </div>
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-close-action"><span class="material-icons close-action">close</span></div>
+            <div class="popup-header">
+                <span class="popup-title">Select your variant</span><br/>
+                <span class="popup-subtitle">codename</span>
+            </div>
+            <div class="popup-body">
+                <p>
+                    These devices all use the same XPerience build.
+                    The vendor may have released the same device under multiple names, or the maintainer may support multiple devices using the same code.
+                </p>
+                <p style="margin-bottom: 0px;">
+                    Select your variant to make sure your guides are correct. Not sure which?<br/>
+                    <a href="" id="compare-link">Compare their differences.</a>
+                </p>
+                <div class="popup-variants-list"></div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <script>
 // Close the popup
 $('.popup-close-action, .page-overlay').on('click', function() {
-  $('.page-overlay').addClass('closed');
-  $('html, body').css({
-    overflow: 'auto',
-    height: 'auto'
-  });
+    $('.page-overlay').addClass('closed');
+    $('html, body').css({
+        overflow: 'auto',
+        height: 'auto'
+    });
 });
 // Prevent popup close when clicking on the popup itself
 $('.popup-overlay').on('click', function(e) {
-  e.stopPropagation();
+    e.stopPropagation();
 });
 
 // Select all items where variant is set
-$('*[data-variant=1]').each(function () {
-  // remove current onClick target, we do something better
-  $(this).attr('onclick', '').unbind('click');
-  $(this).on('click', function() {
-    codename = $(this).attr('data-codename');
-    $('.page-overlay').addClass('active').removeClass('closed');
-    // Replace relevant parts of dialog content
-    $('.popup-variants-list').html($(this).find('.variants-list').html());
-    $('.popup-subtitle').text(codename);
-    $('#compare-link').attr('href', $(this).attr('data-url'));
-    // don't remember last scroll position, always start at top
-    $('.popup-body').scrollTop(0);
-    // prevent scrolling the outside content until closed
-    $('html, body').css({
-      overflow: 'hidden',
+$('*[data-variant=1]').each(function() {
+    // remove current onClick target, we do something better
+    $(this).attr('onclick', '').unbind('click');
+    $(this).on('click', function() {
+        codename = $(this).attr('data-codename');
+        $('.page-overlay').addClass('active').removeClass('closed');
+        // Replace relevant parts of dialog content
+        <span class="math-inline">\('\.popup\-variants\-list'\)\.html\(</span>(this).find('.variants-list').html());
+        $('.popup-subtitle').text(codename);
+        $('#compare-link').attr('href', $(this).attr('data-url'));
+        // don't remember last scroll position, always start at top
+        $('.popup-body').scrollTop(0);
+        // prevent scrolling the outside content until closed
+        $('html, body').css({
+            overflow: 'hidden',
+        });
     });
-  });
   // Remove current click targets, they are just there as fallback solution
   $(this).find('a').each(function() {
     $(this).click(function(e){

@@ -18,7 +18,7 @@ codename: alioth
 cpu: Kryo 585
 cpu_cores: '8'
 cpu_freq: 1 x 3.2 GHz + 3 x 2.42 GHz + 4 x 1.8 GHz
-deprecated: false
+deprecated: true
 dimensions:
   depth: 7.8 mm (0.31 in)
   height: 163.7 mm (6.44 in)
@@ -26,10 +26,10 @@ dimensions:
 download_boot: With the device powered off, hold <kbd>Volume Down</kbd> + <kbd>Power</kbd>.
   Keep holding both buttons until the word "FASTBOOT" appears on the screen, then
   release.
+recovery_partition_name: vendor_boot
 gpu: Adreno 650
 install_method: fastboot_xiaomi_virtual_ab
 maintainers:
-- Kισżż
 name: Redmi K40 / POCO F3 / Mi 11X
 network:
 - 2G GSM
@@ -68,7 +68,6 @@ screen:
 soc: Qualcomm SM8250-AC Snapdragon 870
 storage: 128/256 GB
 vendor: Xiaomi
-current_branch: 17.1
-versions: [17.1]
-deprecated_versions: [16.1]
+versions: []
+deprecated_versions: [16.1, 17.1]
 wifi: 802.11 a/b/g/n/ac/6, Dual-band, Wi-Fi Direct, Wi-Fi Display, DLNA, Hotspot

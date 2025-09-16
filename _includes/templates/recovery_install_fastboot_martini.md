@@ -12,7 +12,7 @@ Before proceeding, ensure the data you would like to retain is backed up to your
 2. Connect the device to your PC via USB.
 3. On the computer, open a command prompt (on Windows) or terminal (on Linux or macOS) window, and type:
 ```
-adb reboot bootloader
+adb -d reboot bootloader
 ```
     {% if device.download_boot %}
     You can also boot into fastboot mode via a key combination:
@@ -68,11 +68,11 @@ To do this, sideload the copy-partitions-20210323_1922.zip package by doing the 
 {%- if device.uses_custom_recovery %}
 2. Sideload the `copy-partitions-20210323_1922.zip` package:
     * On the device, select "Advanced", "ADB Sideload", then swipe to begin sideload
-    * On the host machine, sideload the package using: `adb sideload filename.zip`
+    * On the host machine, sideload the package using: `adb -d sideload filename.zip`
 {%- else %}
 2. Sideload the `copy-partitions-20210323_1922.zip` package:
     * On the device, select "Apply Update", then "Apply from ADB" to begin sideload.
-    * On the host machine, sideload the package using: `adb sideload copy-partitions-20210323_1922.zip`
+    * On the host machine, sideload the package using: `adb -d sideload copy-partitions-20210323_1922.zip`
 3. Now reboot to recovery by tapping "Advanced", then "Reboot to recovery".
 {%- endif %}
 

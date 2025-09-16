@@ -18,7 +18,7 @@ Before proceeding, ensure the data you would like to retain is backed up to your
 3. Connect the device to your PC via USB cable.
 4. Reboot to bootloader by typing:
 ```
-adb reboot bootloader
+adb -d reboot bootloader
 ```
 5. Unlock the device by typing:
 ```
@@ -30,7 +30,7 @@ fastboot flashing unlock
 
 {% include snippets/before_recovery_install.md %}
 
-{% if device.is_ab_device and device.has_recovery_partition != true %}
+{% if device.is_ab_device and device.recovery_partition_name  != true %}
 {% include templates/recovery_install_fastboot_ab.md %}
 {% else %}
 {% include templates/recovery_install_fastboot_generic.md %}
