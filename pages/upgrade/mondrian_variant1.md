@@ -2,8 +2,7 @@
 sidebar: home_sidebar
 title: Upgrade XPerience on mondrian
 folder: upgrade
-permalink: /devices/mondrian/upgrade/variant1
+permalink: /devices/mondrian/upgrade/variant1/index.html
 device: mondrian_variant1
-toc: false
 ---
-{% include templates/device_variants.md %}
+{% include templates/device_upgrade.md %}

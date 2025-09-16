@@ -1,12 +1,9 @@
 ---
 sidebar: home_sidebar
-title: Info about mondrian variants
+title: Info about mondrian
 folder: info
-permalink: /devices/mondrian/variant2/index.html
-redirect_from:
-- /devices/mondrian/install
-- /devices/mondrian/update
+layout: deviceinfo
+permalink: /devices/mondrian/variant2/
 device: mondrian_variant2
-toc: false
 ---
-{% include templates/device_variants.md info=true %}
+{% include templates/device_info.md %}

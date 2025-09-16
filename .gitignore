@@ -9,4 +9,3 @@ _pdf
 .ruby-gemset
 .ruby-env
 vendor/
-*:Zone.Identifier

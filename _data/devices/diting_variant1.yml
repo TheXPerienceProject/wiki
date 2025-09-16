@@ -39,7 +39,7 @@ tree: android_device_xiaomi_diting
 type: phone
 vendor: Xiaomi
 vendor_short: xiaomi
-versions: [19]
+versions: [20.0]
 deprecated_versions: [17.1,18,19]
 deprecated: false
 wifi: 802.11 a/b/g/n/ac/ax; Wi-Fi Direct; dual band

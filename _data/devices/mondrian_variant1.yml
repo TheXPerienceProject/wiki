@@ -11,12 +11,12 @@ codename: mondrian
 cpu: Cortex-X2
 cpu_cores: '8'
 cpu_freq: 3.0 GHz
-current_branch: 19
+current_branch: 18
 dimensions: {width: '75.4 mm (2.97 in)', height: '162.8 mm (6.41 in)', depth: '8.6 mm (0.34 in)'}
 download_boot: With the device powered off, hold <kbd>Volume Down</kbd> + <kbd>Power</kbd>. Keep holding both buttons until the word "FASTBOOT" appears on the screen, then release.
 recovery_partition_name: recovery
 gpu: Qualcomm Adreno 730
-image: poco_f5_pro.png
+image: mondrian.png
 install_method: fastboot_xiaomi_virtual_ab
 is_ab_device: true
 kernel: GKI
@@ -36,8 +36,7 @@ type: phone
 variant: 1
 vendor: Xiaomi
 vendor_short: poco
-versions: [18]
+versions: []
 deprecated_versions: [17, 18]
 deprecated: true
 wifi: 802.11 a/b/g/n/ac/ax; Wi-Fi Direct; dual band
-variant: 1

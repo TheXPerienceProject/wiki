@@ -1,5 +1,5 @@
 architecture: arm64
-battery: {removable: false, capacity: 5160, tech: 'Li-Po'}
+battery: {removable: false, capacity: 5500, tech: 'Li-Po'}
 before_install: {instructions: 'needs_specific_android_fw', version: '14', ships_fw: true}
 bluetooth: {spec: '5.3', profiles: [A2DP + aptX HD + aptX Adaptive]}
 cameras:
@@ -12,32 +12,31 @@ cpu: Cortex-X2
 cpu_cores: '8'
 cpu_freq: 3.0 GHz
 current_branch: 19
-dimensions: {width: '75.4 mm (2.97 in)', height: '162.8 mm (6.41 in)', depth: '8.6 mm (0.34 in)'}
+dimensions: {width: '74.9 mm (2.95 in)', height: '162.8 mm (6.41 in)', depth: '8.0 mm (0.31 in)'}
 download_boot: With the device powered off, hold <kbd>Volume Down</kbd> + <kbd>Power</kbd>. Keep holding both buttons until the word "FASTBOOT" appears on the screen, then release.
 recovery_partition_name: recovery
 gpu: Qualcomm Adreno 730
-image: poco_f5_pro.png
+image: mondrian.png
 install_method: fastboot_xiaomi_virtual_ab
 is_ab_device: true
 kernel: GKI
 maintainers: [Kισżż]
-models: [23013PC75G, 23013PC75I]
-name: Poco F5 Pro
+models: [2312CRAD3C]
+name: Redmi K60
 network: [2G GSM, 2G CDMA, 3G UMTS, 4G LTE, 5G NR]
 peripherals: [A-GPS, Accelerometer, Compass, Dual SIM, dual stereo speakers, Fingerprint under display optical, Galileo, GLONASS, GPS, Gyroscope, Infrared sensor, Light sensor, NFC, proximity sensor, USB OTG, Wi-Fi Display]
-ram: 8/12 GB
-recovery_boot: With the device powered off, hold <kbd>Volume Up</kbd> + <kbd>Power</kbd>. Keep holding both buttons until the "POCO" logo appears on the screen, then release.
-release: 2023-05
-screen: {size: '166.4 mm (6.67 in)', density: 526, resolution: '1440x3200', technology: '120Hz AMOLED'}
+ram: 8/12/16 GB
+recovery_boot: With the device powered off, hold <kbd>Volume Up</kbd> + <kbd>Power</kbd>. Keep holding both buttons until the "Redmi" logo appears on the screen, then release.
+release: 2023-12
+screen: {size: '166.4 mm (6.67 in)', density: 526, resolution: '1440x3200', technology: '120Hz OLED'}
 soc: Qualcomm Snapdragon 8+ Gen 1
-storage: 256/512 GB
+storage: 128/256/512 GB
 tree: android_device_xiaomi_mondrian
 type: phone
-variant: 2
 vendor: Xiaomi
-vendor_short: poco
-versions: [18]
+vendor_short: Xiaomi
+versions: [19]
 deprecated_versions: [17, 18]
 deprecated: true
 wifi: 802.11 a/b/g/n/ac/ax; Wi-Fi Direct; dual band
-variant: 1
+variant: 2
